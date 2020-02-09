@@ -1,0 +1,10 @@
+#!/bin/sh
+
+hydra_url=https://github.com/ory/hydra/releases/download/v1.2.3/hydra_1.2.3_Linux_64-bit.tar.gz
+
+if test -n "$1" && test "$1" = mac; then
+    hydra_url=https://github.com/ory/hydra/releases/download/v1.2.3/hydra_1.2.3_macOS_64-bit.tar.gz
+fi
+
+cd "$(dirname "$0")"
+curl -L $hydra_url | tar xz

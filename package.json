@@ -1,0 +1,13 @@
+{
+  "name": "hydra-oauth-poc",
+  "version": "0.1.0",
+  "scripts": {
+    "serve:hydra": "hydra/hydra serve all --config hydra/hydra.yml --dangerous-force-http",
+    "serve:login-consent": "HYDRA_ADMIN_URL=http://127.0.0.1:4445 hydra-login-consent-logout",
+    "register-demo-client": "HYDRA_ADMIN_URL=http://127.0.0.1:4445 hydra/hydra --config hydra/hydra.yml clients create --id auth-code-client --secret secret --grant-types authorization_code,refresh_token --response-types code,id_token --scope openid,offline --callbacks http://127.0.0.1:5555/callback",
+    "test-oauth-flow": "HYDRA_URL=http://127.0.0.1:4444 hydra/hydra --config hydra/hydra.yml token user --client-id auth-code-client --client-secret secret --port 5555 --scope openid,offline"
+  },
+  "dependencies": {
+    "hydra-login-consent-logout": "^1.2.3"
+  }
+}
