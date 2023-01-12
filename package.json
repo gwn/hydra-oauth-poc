@@ -8,6 +8,6 @@
     "test-oauth-flow": "HYDRA_URL=http://127.0.0.1:4444 hydra/hydra --config hydra/hydra.yml token user --client-id auth-code-client --client-secret secret --port 5555 --scope openid,offline"
   },
   "dependencies": {
-    "hydra-login-consent-logout": "^1.2.3"
+    "hydra-login-consent-logout": "^1.11.10"
   }
 }
